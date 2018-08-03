@@ -18,6 +18,10 @@ $(document).ready(function(){
 
   var holdInterval = null
 
+  var chordLength = 1
+
+  var bpm = 1000
+
 
 
 
@@ -29,8 +33,8 @@ $(document).ready(function(){
   function mkbut (x, y){
     $("#chordContainer").empty()
     for (var i = 0; i < chordArray.length; i++) {
-      var a = $("<button>")
-      a.addClass("chordButton btn btn-primary mr-1")
+      var a = $("<div>")
+      a.addClass("chordButton btn btn-info mr-1")
       a.attr("value", y)
       a.attr("data", i)
       a.text(x + chordArray[i])
@@ -42,23 +46,18 @@ $(document).ready(function(){
     var root = noteArray.indexOf(a)
     var third = root + 4
     var fifth = root + 7
-    // var chord = []
-    // chord.push(polySynth.triggerAttackRelease(noteArray[root], 1), polySynth.triggerAttackRelease(noteArray[third], 1), polySynth.triggerAttackRelease(noteArray[fifth], 1))
-    // arrayOfChords.push(chord)
-    // console.log(arrayOfChords.length)
-    // console.log(arrayOfChords)
-    polySynth.triggerAttackRelease(noteArray[root], 1)
-    polySynth.triggerAttackRelease(noteArray[third], 1)
-    polySynth.triggerAttackRelease(noteArray[fifth], 1)
+    polySynth.triggerAttackRelease(noteArray[root], chordLength)
+    polySynth.triggerAttackRelease(noteArray[third], chordLength)
+    polySynth.triggerAttackRelease(noteArray[fifth], chordLength)
   }
 
   function minorChord(a) {
     var root = noteArray.indexOf(a)
     var third = root + 3
     var fifth = root + 7
-    polySynth.triggerAttackRelease(noteArray[root], 1)
-    polySynth.triggerAttackRelease(noteArray[third], 1)
-    polySynth.triggerAttackRelease(noteArray[fifth], 1)
+    polySynth.triggerAttackRelease(noteArray[root], chordLength)
+    polySynth.triggerAttackRelease(noteArray[third], chordLength)
+    polySynth.triggerAttackRelease(noteArray[fifth], chordLength)
   }
 
   function seventh(a) {
@@ -66,10 +65,10 @@ $(document).ready(function(){
     var third = root + 4
     var fifth = root + 7
     var seventh = root + 10
-    polySynth.triggerAttackRelease(noteArray[root], 1)
-    polySynth.triggerAttackRelease(noteArray[third], 1)
-    polySynth.triggerAttackRelease(noteArray[fifth], 1)
-    polySynth.triggerAttackRelease(noteArray[seventh], 1)
+    polySynth.triggerAttackRelease(noteArray[root], chordLength)
+    polySynth.triggerAttackRelease(noteArray[third], chordLength)
+    polySynth.triggerAttackRelease(noteArray[fifth], chordLength)
+    polySynth.triggerAttackRelease(noteArray[seventh], chordLength)
   }
 
   function minorSeventh(a) {
@@ -77,10 +76,10 @@ $(document).ready(function(){
     var third = root + 3
     var fifth = root + 7
     var seventh = root + 10
-    polySynth.triggerAttackRelease(noteArray[root], 1)
-    polySynth.triggerAttackRelease(noteArray[third], 1)
-    polySynth.triggerAttackRelease(noteArray[fifth], 1)
-    polySynth.triggerAttackRelease(noteArray[seventh], 1)
+    polySynth.triggerAttackRelease(noteArray[root], chordLength)
+    polySynth.triggerAttackRelease(noteArray[third], chordLength)
+    polySynth.triggerAttackRelease(noteArray[fifth], chordLength)
+    polySynth.triggerAttackRelease(noteArray[seventh], chordLength)
   }
 
   function majorSeventh(a) {
@@ -88,10 +87,10 @@ $(document).ready(function(){
     var third = root + 4
     var fifth = root + 7
     var seventh = root + 11
-    polySynth.triggerAttackRelease(noteArray[root], 1)
-    polySynth.triggerAttackRelease(noteArray[third], 1)
-    polySynth.triggerAttackRelease(noteArray[fifth], 1)
-    polySynth.triggerAttackRelease(noteArray[seventh], 1)
+    polySynth.triggerAttackRelease(noteArray[root], chordLength)
+    polySynth.triggerAttackRelease(noteArray[third], chordLength)
+    polySynth.triggerAttackRelease(noteArray[fifth], chordLength)
+    polySynth.triggerAttackRelease(noteArray[seventh], chordLength)
   }
 
 
@@ -105,10 +104,6 @@ $(document).ready(function(){
       rootNote = $(this).attr("value")
       functionSequence.push(chordType)
       chordSequence.push(rootNote)
-      // var obj = {
-      //   type : chordType,
-      //   root : rootNote,
-      // }
       functionArray[chordType](rootNote)
       console.log(functionSequence)
       console.log(chordSequence)
@@ -128,15 +123,34 @@ $(document).ready(function(){
        $("body").css("background-color", arrayOfColor[counter])
        functionArray[functionSequence[counter]](chordSequence[counter])
        counter += 1;
-    }, 1000)
+    }, bpm)
+    $(".lengthButton").prop('disabled', true)
+    $(".bpmButton").prop('disabled', true)
+    $("#playSong").prop('disabled', true)
     })
 
     $("#clearSong").on("click", function() {
       functionSequence = []
       chordSequence = []
       arrayOfColor = []
+      chordLength = 1
+      bpm = 1000
       $("body").css("background-color", "white")
       clearInterval(holdInterval)
+      $(".lengthButton").prop('disabled', false)
+      $(".bpmButton").prop('disabled', false)
+      $("#playSong").prop('disabled', false)
+      $("#chordContainer").empty()
+    })
+
+    $(".lengthButton").on ("click", function() {
+      chordLength = $(this).attr("value")
+      console.log("The chord length is " + chordLength + " seconds")
+    })
+
+    $(".bpmButton").on ("click", function() {
+      bpm = $(this).attr("value")
+      console.log("The bpm is " + chordLength + " miliseconds")
     })
 
 
