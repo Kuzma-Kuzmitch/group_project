@@ -14,6 +14,12 @@ $(document).ready(function(){
 
   var chordSequence = []
 
+  var arrayOfColor = []
+
+  var holdInterval = null
+
+
+
 
 
 
@@ -36,6 +42,11 @@ $(document).ready(function(){
     var root = noteArray.indexOf(a)
     var third = root + 4
     var fifth = root + 7
+    // var chord = []
+    // chord.push(polySynth.triggerAttackRelease(noteArray[root], 1), polySynth.triggerAttackRelease(noteArray[third], 1), polySynth.triggerAttackRelease(noteArray[fifth], 1))
+    // arrayOfChords.push(chord)
+    // console.log(arrayOfChords.length)
+    // console.log(arrayOfChords)
     polySynth.triggerAttackRelease(noteArray[root], 1)
     polySynth.triggerAttackRelease(noteArray[third], 1)
     polySynth.triggerAttackRelease(noteArray[fifth], 1)
@@ -83,10 +94,7 @@ $(document).ready(function(){
     polySynth.triggerAttackRelease(noteArray[seventh], 1)
   }
 
-  function dummy() {
-    console.log("hello")
 
-  }
 
     $(".musicButton").on("click", function(){
       mkbut($(this).attr("value"), $(this).attr("data"))
@@ -95,22 +103,44 @@ $(document).ready(function(){
     $(document).on("click", ".chordButton", function(){
       chordType = $(this).attr("data")
       rootNote = $(this).attr("value")
-      var obj = {
-        type : chordType,
-        root : rootNote,
-      }
+      functionSequence.push(chordType)
+      chordSequence.push(rootNote)
+      // var obj = {
+      //   type : chordType,
+      //   root : rootNote,
+      // }
       functionArray[chordType](rootNote)
-      functionSequence.push(obj)
       console.log(functionSequence)
+      console.log(chordSequence)
     })
 
     $("#playSong").on("click", function(){
-      //This is where I want to play the song via the functionSequence array
+      for (var i = 0; i < chordSequence.length; i++) {
+        var randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);})
+        arrayOfColor.push(randomColor)
+      }
+      var counter = 0;
+      holdInterval = setInterval(  () => {
+       if (counter === chordSequence.length ) {
+           counter = 0;
+       }
+       console.log(counter)
+       $("body").css("background-color", arrayOfColor[counter])
+       functionArray[functionSequence[counter]](chordSequence[counter])
+       counter += 1;
+    }, 1000)
     })
 
     $("#clearSong").on("click", function() {
-      songSequence = []
+      functionSequence = []
+      chordSequence = []
+      arrayOfColor = []
+      $("body").css("background-color", "white")
+      clearInterval(holdInterval)
     })
+
+
+
 
 
 
