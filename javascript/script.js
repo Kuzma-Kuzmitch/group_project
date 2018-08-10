@@ -8,6 +8,10 @@ $(document).ready(function(){
 
   var chordArray = ["Major", "Minor", "7th", "Minor7th", "Major7th"]
 
+  var chordTypeArray = ["", "m", "7", "m7", "maj7"]
+
+  var actualChordArray = []
+
   var functionArray = [majorChord, minorChord, seventh, minorSeventh, majorSeventh]
 
   var functionSequence = []
@@ -37,6 +41,7 @@ $(document).ready(function(){
       a.addClass("chordButton btn btn-info mr-1")
       a.attr("value", y)
       a.attr("data", i)
+      a.attr("root", x)
       a.text(x + chordArray[i])
       $("#chordContainer").append(a)
     }
@@ -102,11 +107,14 @@ $(document).ready(function(){
     $(document).on("click", ".chordButton", function(){
       chordType = $(this).attr("data")
       rootNote = $(this).attr("value")
+      rootNormal = $(this).attr("root")
       functionSequence.push(chordType)
       chordSequence.push(rootNote)
+      actualChordArray.push(rootNormal + chordTypeArray[chordType])
       functionArray[chordType](rootNote)
       console.log(functionSequence)
       console.log(chordSequence)
+      console.log(actualChordArray)
     })
 
     $("#playSong").on("click", function(){
