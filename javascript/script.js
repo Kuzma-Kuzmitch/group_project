@@ -111,6 +111,7 @@ $(document).ready(function(){
       functionSequence.push(chordType)
       chordSequence.push(rootNote)
       actualChordArray.push(rootNormal + chordTypeArray[chordType])
+      $("#displaySequence").append(rootNormal + chordTypeArray[chordType] + ", ")
       functionArray[chordType](rootNote)
       console.log(functionSequence)
       console.log(chordSequence)
@@ -135,6 +136,7 @@ $(document).ready(function(){
     $(".lengthButton").prop('disabled', true)
     $(".bpmButton").prop('disabled', true)
     $("#playSong").prop('disabled', true)
+    $("#chordContainer").empty()
     })
 
     $("#clearSong").on("click", function() {
@@ -148,7 +150,18 @@ $(document).ready(function(){
       $(".lengthButton").prop('disabled', false)
       $(".bpmButton").prop('disabled', false)
       $("#playSong").prop('disabled', false)
+      $("#displaySequence").empty()
       $("#chordContainer").empty()
+    })
+
+    $("#resetSong").on("click", function() {
+      $("body").css("background-color", "white")
+      clearInterval(holdInterval)
+      chordLength = 1
+      bpm = 1000
+      $(".lengthButton").prop('disabled', false)
+      $(".bpmButton").prop('disabled', false)
+      $("#playSong").prop('disabled', false)
     })
 
     $(".lengthButton").on ("click", function() {
@@ -162,7 +175,7 @@ $(document).ready(function(){
     })
 
 
-    $("#searchSong").on("click", function() {
+    $("#searchSong").on("click", function() {})
       //3 lines below just for testing
       // console.log(" this is actualChordArray  ")
       // console.log(actualChordArray)
