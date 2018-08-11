@@ -225,6 +225,8 @@ $(document).ready(function(){
      console.log("chordArray is recongnized")
      if(matchExists === true) {
          console.log ("you sequence matches a sequence")
+         //triggering a modal
+         $("#myModal").display
      }
      else (console.log ("you testsequence failed matching with scrapedTest perfectly"))
  }

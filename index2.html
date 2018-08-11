@@ -55,13 +55,36 @@
       <button id="resetSong" class="btn  otherButton">Reset Song</button>
       <button id="clearSong" class="btn  otherButton">Clear Song</button>
       <!-- added a search song button, to invoke a search function - see reverse.js -->
-      <button id="searchSong" class="btn  otherButton">Search your song</button>
+      <button id="searchSong" class="btn  otherButton" data-toggle="modal" data-target="#myModal">Search your song</button>
     </div>
 
     <div  id="currentSequnce" class="container text-center mt-1 p-2">
         <h1 class=""><span id="displaySequence"></span></h1>
     </div>
 
+<!-- //this is code for a modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Song Match!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Your song has a similar sequence to:
+        <h3>Creep</h3>
+        <h4>By: Radiohead</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
