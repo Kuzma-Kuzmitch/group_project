@@ -168,9 +168,6 @@ $(document).ready(function(){
       // console.log(actualChordArray)
       // console.log(myArray)
 
-      segmentMatch(testSeq, myArray);
-    });
-
 
 
 
