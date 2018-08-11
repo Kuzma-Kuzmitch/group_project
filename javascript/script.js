@@ -114,7 +114,7 @@ $(document).ready(function(){
       functionArray[chordType](rootNote)
       console.log(functionSequence)
       console.log(chordSequence)
-      console.log(actualChordArray)
+      console.log(" this is actualChordArray "+ actualChordArray)
     })
 
     $("#playSong").on("click", function(){
@@ -162,7 +162,14 @@ $(document).ready(function(){
     })
 
 
+    $("#searchSong").on("click", function() {
+      //3 lines below just for testing
+      // console.log(" this is actualChordArray  ")
+      // console.log(actualChordArray)
+      // console.log(myArray)
 
+      segmentMatch(testSeq, myArray);
+    });
 
 
 
