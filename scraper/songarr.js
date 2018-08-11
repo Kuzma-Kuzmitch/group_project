@@ -1,9 +1,9 @@
 var objarr = {
   elvisFallingInLove : ["c" , "Em" , "Am" , "F" , "C" , "G" , "FG" ,"Am" , "F" , "C" , "G" , "C" , "C" , "Em" , "Am" , "F", "C" , "G" , "FG" , "Am" , "F" , "C" , "G" , "C" ]
   ,
-  oasisDontLookBack : ["C", "G" , "Am" , "E" , "F" , "G", "C" , "Am" "G" , "C" , "G" , "Am" , "E" , "F" , "G" , "C" , "Am"   , "G" , "F" , "C", "G" , "Am" , "E" , "F", "G" , "C" , "Am" , "G" , "C" , "G" , "Am" , "E" , "F" , "G" , "C" , "G" , "Am" , "E" , "F" , "G" , "C" , "Am" , "G"]
+  oasisDontLookBack : ["C", "G" , "Am" , "E" , "F" , "G", "C" , "Am", "G" , "C" , "G" , "Am" , "E" , "F" , "G" , "C" , "Am"   , "G" , "F" , "C", "G" , "Am" , "E" , "F", "G" , "C" , "Am" , "G" , "C" , "G" , "Am" , "E" , "F" , "G" , "C" , "G" , "Am" , "E" , "F" , "G" , "C" , "Am" , "G"]
   ,
-  eaglesHotelCali : ["Am" , "E7" , "G" , "D" , "F" , "C" , "Dm" , "E" , "Am" , "E7" , "G" , "D" , "F" , "C" , "Dm" , "E" "F" ,"E7" , "Am" , "F" , "C" , "Dm" , "E"]
+  eaglesHotelCali : ["Am" , "E7" , "G" , "D" , "F" , "C" , "Dm" , "E" , "Am" , "E7" , "G" , "D" , "F" , "C" , "Dm" , "E", "F" ,"E7" , "Am" , "F" , "C" , "Dm" , "E"]
   ,
   kodalineAllIWant : ["C" , "F" , "C" , "G/B" , "Am" , "F" , "C" , "F" , "C", "C" , "F" , "C" , "G/B" , "Am" , "F" , "C" , "F" , "C" , "G" , "Am" , "F" , "C" , "G" , "Am" , "F" , "C" , "G"]
   ,
@@ -25,15 +25,15 @@ var objarr = {
   ,
   u2WithOrWithoutYou : ["D" , "A" , "Bm" , "G", "D" , "A" , "Bm" , "G" , "D", "A" , "Bm" , "G" , "D" , "A" , "Bm" ,"G", "D" , "A" , "Bm" , "G"]
   ,
-  trainDropsOfJupiter : ["C" , "G" ."F" , "C", "G" , "F" , "C","G" ,"F", "C" , "G" , "F" ,"G" , "D" , "F" , "C" , "G" , "D" , "Dm" , "F"]
+  trainDropsOfJupiter : ["C" , "G", "F" , "C", "G" , "F" , "C","G" ,"F", "C" , "G" , "F" ,"G" , "D" , "F" , "C" , "G" , "D" , "Dm" , "F"]
   ,
-  natalieTorn : ["F" , "Am" ,"Bd" , "F" , "Am" ,"Bd" , "Dm" , "C" . "Am" , "C" , "F", "F" , "C" ,"Dm" ,"Bd" , "F" , "C" , "Bd" , "F" , "C" , "Dm" , "C" , "Bd"]
+  natalieTorn : ["F" , "Am" ,"Bd" , "F" , "Am" ,"Bd" , "Dm" , "C" , "Am" , "C" , "F", "F" , "C" ,"Dm" ,"Bd" , "F" , "C" , "Bd" , "F" , "C" , "Dm" , "C" , "Bd"]
   ,
   imagineDragonsDemons : ["C" , "G" , "Am" ,"F" , "C" , "G" , "Am" , "F" , "C" , "G" , "Am" , "F" , "C" , "G" , "Am" , "F" , "C" , "C" , "G" , "Am" , "F" , "C" , "G" , "Am" , "F" , "C"]
   ,
   nirvanaTheManWhoSoldTheWorld : ["A" , "Dm" , "A" , "F" , "C" , "A" , "Dm" , "C" , "F" , "Bb" , "F" , "C" ,"F" , "Bb" , "A" , "A" , "Dm" , "A" , "F" , "C" , "A" , "Dm" , "C", "F" , "Bb" , "F" , "C" , "F" , "Bb" , "A"]
   ,
-  redhotchillipeppersUnderTheBridge : ["E" , "B" , "C#m" , "G#m" , "A" , "E" , "B" , "C#m" , "A" , "E" , "B" , "C#m" , "G#m" , "A" , "E" , "B" , "C#m" , "G#m" , "A" , "E" , "B" , "C#m" , "G#m" , "A" , "E" ,"B" , "C#m" , "G#m" , "A" ,"E" , "B" , "C#m" , "A" , "Emaj7" , "E" ,"B" ,"C#m" , "G#m", "A" ,"E" , "B" , "C#m" , "G#m" , "A" , "E" , "B" , "C#m" , "A" ,"E" , "B" , "C#m" , "A" , "Emaj7" ,]
+  redhotchillipeppersUnderTheBridge : ["E" , "B" , "C#m" , "G#m" , "A" , "E" , "B" , "C#m" , "A" , "E" , "B" , "C#m" , "G#m" , "A" , "E" , "B" , "C#m" , "G#m" , "A" , "E" , "B" , "C#m" , "G#m" , "A" , "E" ,"B" , "C#m" , "G#m" , "A" ,"E" , "B" , "C#m" , "A" , "Emaj7" , "E" ,"B" ,"C#m" , "G#m", "A" ,"E" , "B" , "C#m" , "G#m" , "A" , "E" , "B" , "C#m" , "A" ,"E" , "B" , "C#m" , "A" , "Emaj7"]
   ,
   theBeatlesComeTogether : ["Dm" , "Dm" , "A7" ,"G7" , "Dm" , "Dm" , "A7" , "G7" , "Bm" , "A" , "G" ,"A"]
   ,

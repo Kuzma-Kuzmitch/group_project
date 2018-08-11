@@ -8,6 +8,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://tonejs.github.io/build/Tone.js"></script>
     <script src="javascript/script.js"></script>
+    <script src="javascript/reverse.js"></script>
+    <!-- <script src="scraper/scrape.js"></script> -->
+    <!-- I tried adding the scraper but it was throwing an error -->
   </head>
   <body>
     <div id="chordButtons" class="container text-center p-3 mt-5">
@@ -49,6 +52,8 @@
       <h3 id="songSequence"></h3>
       <button id="playSong" class="btn btn-primary">Play song!</button>
       <button id="clearSong" class="btn btn-primary">Stop/Clear</button>
+      <!-- added a search song button, to invoke a search function - see reverse.js -->
+      <button id="searchSong" class="btn btn-primary">Search your song</button>
     </div>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
