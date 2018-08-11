@@ -26,11 +26,24 @@ $(document).ready(function(){
 
   var bpm = 1000
 
-
-
-
-
-
+  var keyboard = {
+    a : "C4",
+    w : "C#4",
+    s : "D4",
+    e : "D#4",
+    d : "E4",
+    f : "F4",
+    t : "F#4",
+    g : "G4",
+    y : "G#4",
+    h : "A4",
+    u : "A#4",
+    j : "B4",
+    k : "C5",
+    o : "C#5",
+    l : "D5",
+    p : "D#5",
+  }
 
 
 
@@ -38,7 +51,7 @@ $(document).ready(function(){
     $("#chordContainer").empty()
     for (var i = 0; i < chordArray.length; i++) {
       var a = $("<div>")
-      a.addClass("chordButton btn btn-info mr-1")
+      a.addClass("chordButton btn mr-1")
       a.attr("value", y)
       a.attr("data", i)
       a.attr("root", x)
@@ -98,6 +111,16 @@ $(document).ready(function(){
     polySynth.triggerAttackRelease(noteArray[seventh], chordLength)
   }
 
+  function playNote() {
+    $(document).keypress(function(event) {
+      console.log(event.key)
+      var note = event.key
+      var piano = keyboard[note]
+      console.log(keyboard[note])
+      synth.triggerAttackRelease(piano, 0.5)
+    })
+  }
+
 
 
     $(".musicButton").on("click", function(){
@@ -137,6 +160,7 @@ $(document).ready(function(){
     $(".bpmButton").prop('disabled', true)
     $("#playSong").prop('disabled', true)
     $("#chordContainer").empty()
+    playNote()
     })
 
     $("#clearSong").on("click", function() {
@@ -152,6 +176,7 @@ $(document).ready(function(){
       $("#playSong").prop('disabled', false)
       $("#displaySequence").empty()
       $("#chordContainer").empty()
+      $(document).off("keypress")
     })
 
     $("#resetSong").on("click", function() {
@@ -162,6 +187,7 @@ $(document).ready(function(){
       $(".lengthButton").prop('disabled', false)
       $(".bpmButton").prop('disabled', false)
       $("#playSong").prop('disabled', false)
+      $(document).off("keypress")
     })
 
     $(".lengthButton").on ("click", function() {
@@ -174,12 +200,39 @@ $(document).ready(function(){
       console.log("The bpm is " + chordLength + " miliseconds")
     })
 
+  function segmentMatch(seq, song) {
+     //seq is the user sequence to be tested for - actualChordArray???
+     //song is the array of chords in the scraped song we are testing against
+     var thisLong = seq.length;
+     var fullLong = song.length;
+     var myvar = 0;
+     var matchExists = false;
 
-    $("#searchSong").on("click", function() {})
-      //3 lines below just for testing
-      // console.log(" this is actualChordArray  ")
-      // console.log(actualChordArray)
-      // console.log(myArray)
+     for (var i = 0; i < fullLong - thisLong; i++) {
+         myvar = 0;
+         if (seq[0]==song[i]){
+             for (var j =0; j < thisLong;  j++){
+                 if (seq[j]===song[i+j]){
+                     myvar =myvar +1;
+                 }
+             }
+             if (myvar === thisLong){
+                matchExists = true;
+                break;
+             }
+         }
+     }
+     console.log("chordArray is recongnized")
+     if(matchExists === true) {
+         console.log ("you sequence matches a sequence")
+     }
+     else (console.log ("you testsequence failed matching with scrapedTest perfectly"))
+ }
+
+ $("#searchSong").on("click", function() {
+
+   segmentMatch(actualChordArray, objarr["radioheadCreep"])
+ })
 
 
 

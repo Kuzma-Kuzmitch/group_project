@@ -14,21 +14,21 @@
     <!-- I tried adding the scraper but it was throwing an error -->
   </head>
   <body>
-    <div id="chordButtons" class="container text-center p-3 mt-3">
-      <button class="btn btn-primary musicButton" value="C" data='C4'>C Chords</button>
-      <button class="btn btn-primary musicButton" value="D" data='D4'>D Chords</button>
-      <button class="btn btn-primary musicButton" value="E" data='E4'>E Chords</button>
-      <button class="btn btn-primary musicButton" value="F" data='F4'>F Chords</button>
-      <button class="btn btn-primary musicButton" value="G" data='G4'>G Chords</button>
-      <button class="btn btn-primary musicButton" value="A" data='A4'>A Chords</button>
-      <button class="btn btn-primary musicButton" value="B" data='B4'>B Chords</button>
+    <div id="chordButtons" class="container text-center p-3 mt-2">
+      <button class="btn musicButton" value="C" data='C4'>C Chords</button>
+      <button class="btn musicButton" value="D" data='D4'>D Chords</button>
+      <button class="btn musicButton" value="E" data='E4'>E Chords</button>
+      <button class="btn musicButton" value="F" data='F4'>F Chords</button>
+      <button class="btn musicButton" value="G" data='G4'>G Chords</button>
+      <button class="btn musicButton" value="A" data='A4'>A Chords</button>
+      <button class="btn musicButton" value="B" data='B4'>B Chords</button>
     </div>
     <div id="chordButtons" class="container text-center p-3">
-      <button class="btn btn-primary musicButton" value="C#" data='C#4'>C# Chords</button>
-      <button class="btn btn-primary musicButton" value="D#" data='D#4'>D# Chords</button>
-      <button class="btn btn-primary musicButton" value="F#" data='F#4'>F# Chords</button>
-      <button class="btn btn-primary musicButton" value="G#" data='G#4'>G# Chords</button>
-      <button class="btn btn-primary musicButton" value="A#" data='A#4'>A# Chords</button>
+      <button class="btn musicButton" value="C#" data='C#4'>C# Chords</button>
+      <button class="btn musicButton" value="D#" data='D#4'>D# Chords</button>
+      <button class="btn musicButton" value="F#" data='F#4'>F# Chords</button>
+      <button class="btn musicButton" value="G#" data='G#4'>G# Chords</button>
+      <button class="btn musicButton" value="A#" data='A#4'>A# Chords</button>
     </div>
 
     <div id="chordContainer" class="container text-center p-3"></div>
@@ -36,29 +36,29 @@
     <div id="songInfo" class="container text-center">
       <h2>Chord Length:</h2>
       <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-primary lengthButton" value="0.5">1/2 Second</button>
-        <button type="button" class="btn btn-primary lengthButton" value="1">1 Second</button>
-        <button type="button" class="btn btn-primary lengthButton" value="1.5">1 1/2 Second</button>
+        <button type="button" class="btn  otherButton lengthButton" value="0.5">1/2 Second</button>
+        <button type="button" class="btn  otherButton lengthButton" value="1">1 Second</button>
+        <button type="button" class="btn  otherButton lengthButton" value="1.5">1 1/2 Second</button>
       </div>
-      <h2>BPM</h2>
+      <h2>BPM:</h2>
       <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-primary bpmButton" value="500">1/2 Second</button>
-        <button type="button" class="btn btn-primary bpmButton" value="1000">1 Second</button>
-        <button type="button" class="btn btn-primary bpmButton" value="1500">1 1/2 Second</button>
+        <button type="button" class="btn  otherButton bpmButton" value="500">1/2 Second</button>
+        <button type="button" class="btn  otherButton bpmButton" value="1000">1 Second</button>
+        <button type="button" class="btn  otherButton bpmButton" value="1500">1 1/2 Second</button>
       </div>
     </div>
 
     <div id="musicSequence" class="container text-center">
       <h1>Your song:</h1>
       <h3 id="songSequence"></h3>
-      <button id="playSong" class="btn btn-primary">Play Song!</button>
-      <button id="resetSong" class="btn btn-primary">Reset Song</button>
-      <button id="clearSong" class="btn btn-primary">Clear Song</button>
+      <button id="playSong" class="btn  otherButton">Play Song!</button>
+      <button id="resetSong" class="btn  otherButton">Reset Song</button>
+      <button id="clearSong" class="btn  otherButton">Clear Song</button>
       <!-- added a search song button, to invoke a search function - see reverse.js -->
-      <button id="searchSong" class="btn btn-primary" disabled>Search your song</button>
+      <button id="searchSong" class="btn  otherButton">Search your song</button>
     </div>
 
-    <div  id="currentSequnce" class="container text-center mt-2 p-4">
+    <div  id="currentSequnce" class="container text-center mt-1 p-2">
         <h1 class=""><span id="displaySequence"></span></h1>
     </div>
 
