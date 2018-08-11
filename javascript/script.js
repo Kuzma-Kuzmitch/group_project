@@ -163,6 +163,9 @@ $(document).ready(function(){
 
 
 
+    module.exports = {
+      songChords : actualChordArray
+    }
 
 
 
